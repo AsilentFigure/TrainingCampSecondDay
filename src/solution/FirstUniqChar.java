@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class FirstUniqChar {
 
-    public char firstUniqChar(String s) {
+    public char firstUniqChar1(String s) {
         Map<Character, Integer> map = new LinkedHashMap<>();
         for(int i = 0; i < s.length();i++){
             if(map.containsKey(s.charAt(i))){
@@ -26,6 +26,24 @@ public class FirstUniqChar {
             }
         }
 
+        return ' ';
+    }
+
+    public char firstUniqChar(String s) {
+        Map<Character, Boolean> map = new LinkedHashMap<>();
+        char[] sChar = s.toCharArray();
+        for(char charS : sChar){
+            if(map.containsKey(charS)){
+                map.put(charS, false);
+            }else {
+                map.put(charS, true);
+            }
+        }
+        for(Map.Entry<Character, Boolean> entry : map.entrySet()){
+            if(entry.getValue()){
+                return entry.getKey();
+            }
+        }
         return ' ';
     }
 }

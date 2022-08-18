@@ -12,8 +12,8 @@ import java.util.Arrays;
  */
 public class TrainingCampSecondDay {
     public static void main(String[] args) {
-        String s = "leetcode";
-        FirstUniqChar firstUniqChar = new FirstUniqChar();
-        System.out.println(firstUniqChar.firstUniqChar(s));
+        int[][] matrix = new int[][]{ {1,5,9}, {10, 11, 13}, {12, 13, 15}};
+        KthSmallest kthSmallest = new KthSmallest();
+        System.out.println(kthSmallest.kthSmallest(matrix, 8));
     }
 }
