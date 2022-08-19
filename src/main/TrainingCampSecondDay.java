@@ -12,8 +12,8 @@ import java.util.Arrays;
  */
 public class TrainingCampSecondDay {
     public static void main(String[] args) {
-        int[][] matrix = new int[][]{ {1,5,9}, {10, 11, 13}, {12, 13, 15}};
-        KthSmallest kthSmallest = new KthSmallest();
-        System.out.println(kthSmallest.kthSmallest(matrix, 8));
+        int[] nums = {4,2,5,9,7,4,8};
+        ArrayRankTransform arrayRankTransform = new ArrayRankTransform();
+        System.out.println(Arrays.toString(arrayRankTransform.arrayRankTransform(nums)));
     }
 }

@@ -11,19 +11,17 @@ import java.util.*;
 public class KthSmallest {
 
     public int kthSmallest(int[][] matrix, int k) {
-        Stack<Integer> stack = new Stack<>();
-        for(int i = 0; i < matrix.length;i++){
-            for(int j = 0; j < matrix.length;j++){
-                if (stack.size() < k){
-                    stack.add(matrix[i][j]);
-                }else {
-                    if(matrix[i][j] < stack.peek());
-                    stack.pop();
-                    stack.add(matrix[i][j]);
+        PriorityQueue priorityQueue = new PriorityQueue<Integer>();
+        for(int i = 0;i < matrix.length;i++){
+            for(int j = 0;j<matrix[0].length;j++){
+                if(priorityQueue.size() < k){
+                    priorityQueue.add(matrix[i][j]);
+                }else if(matrix[i][j] < (Integer) priorityQueue.peek()){
+                    priorityQueue.poll();
+                    priorityQueue.add(matrix[i][j]);
                 }
             }
         }
-        System.out.println(stack);
         return 0;
     }
 }
