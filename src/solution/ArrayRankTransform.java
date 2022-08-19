@@ -1,8 +1,6 @@
 package solution;
 
-import com.sun.media.sound.SoftTuning;
-
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.TreeMap;
 
@@ -21,15 +19,17 @@ public class ArrayRankTransform {
                 return o1 - o2;
             }
         });
-        for(int num : arr){
+        int[] nums = new int[arr.length];
+        System.arraycopy(arr, 0, nums, 0,arr.length);
+        Arrays.sort(nums);
+        for(int num : nums){
             if(!treeMap.containsKey(num)){
-                treeMap.put(num, treeMap.size() + 1);
+                treeMap.put(num, treeMap.size()+1);
             }
         }
-        System.out.println(treeMap);
-//        for(int i = 0;i < arr.length;i++){
-//            arr[i] = treeMap.get(arr[i]);
-//        }
+        for(int i = 0;i < arr.length;i++){
+            arr[i] = treeMap.get(arr[i]);
+        }
         return arr;
     }
 }
