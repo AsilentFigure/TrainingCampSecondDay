@@ -4,6 +4,7 @@ import solution.*;
 import tool.*;
 
 import java.awt.*;
+import java.util.Arrays;
 
 /**
  * @author ASilentFigure
@@ -12,18 +13,8 @@ import java.awt.*;
  */
 public class TrainingCampSecondDay {
     public static void main(String[] args) {
-
-        ListNode listNode4 = new ListNode(4);
-        ListNode listNode4a = new ListNode(4);
-        ListNode listNode3 = new ListNode(7);
-        ListNode listNode2 = new ListNode(3);
-        ListNode listNode1 = new ListNode(-9, listNode2);
-        ListNode listNode1a = new ListNode(5, listNode3);
-        ListNode listNodeNull = new ListNode();
-        MergeTwoLists mergeTwoLists = new MergeTwoLists();
-        TraverseList traverseList = new TraverseList();
-        traverseList.traverseList(listNode1);
-        traverseList.traverseList(listNode1a);
-        traverseList.traverseList(mergeTwoLists.mergeTwoLists(listNode1, listNode1a));
+        int [] nums = {1,1,1,2,2,3};
+        TopKFrequent topKFrequent = new TopKFrequent();
+        System.out.println(Arrays.toString(topKFrequent.topKFrequent(nums, 2)));
     }
 }

@@ -12,6 +12,9 @@ import java.util.List;
 public class FindMinDifference {
 
     public int findMinDifference(List<String> timePoints) {
+        if(timePoints.size() > 1440){
+            return 0;
+        }
         int result = Integer.MAX_VALUE;
         Collections.sort(timePoints);
         for(int i = 1; i < timePoints.size(); i++){
